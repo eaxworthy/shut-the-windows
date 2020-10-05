@@ -9,9 +9,9 @@ client = Client(sid, auth_token)
 def send_message(is_safe, aqi_value, number):
 
 	if is_safe:
-		client.messages.create(to=number, from_='+12056795299', body=f'Air quality has reached an acceptable level of {aqi_value}.')
+		client.messages.create(to=number, from_=from_number, body=f'Air quality has reached an acceptable level of {aqi_value}.')
 	else:
-		client.messages.create(to=number, from_="+12056795299", body=f'Warning: air quality is at {aqi_value}.')
+		client.messages.create(to=number, from_=from_number, body=f'Warning: air quality is at {aqi_value}.')
 
 def check_quality():
 	url = 'https://www.purpleair.com/json?show=' + sensor
