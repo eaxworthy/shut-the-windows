@@ -49,10 +49,10 @@ def pm_to_aqi(pm_value):
 
 
 is_safe = True
-log = 'log_file.txt'
+
 while True:
 	aqi, current = check_quality()
-	with open(log, 'w') as log:
+	with open('log_file.txt', 'a') as log:
 		log.write(datetime.now().strftime('%b-%d-%y %H:%M, ') + str(aqi) + '\n')
 	if is_safe != current:
 		is_safe = current
